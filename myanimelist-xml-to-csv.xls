@@ -1,0 +1,31 @@
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="text" encoding="UTF-8"/>
+<xsl:strip-space elements="*" />
+<xsl:template match="myinfo">
+  <xsl:value-of select="user_id"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="user_name"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="user_total_anime"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="user_total_watching"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="user_total_completed"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="user_total_onhold"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="user_total_dropped"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="user_total_plantowatch"/><xsl:text>,</xsl:text>
+  <xsl:apply-templates select="myinfo"/>
+series_animedb_id,series_title,series_type,series_episodes,my_watched_episodes,my_score,my_status,my_comments,my_times_watched,
+</xsl:template>
+<xsl:template match="anime">
+  <xsl:value-of select="series_animedb_id"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="series_title"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="series_type"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="series_episodes"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="my_watched_episodes"/><xsl:text>,</xsl:text> 
+  <xsl:value-of select="my_score"/><xsl:text>,</xsl:text> 
+  <xsl:value-of select="my_status"/><xsl:text>,</xsl:text> 
+  <xsl:value-of select="my_comments"/><xsl:text>,</xsl:text>
+  <xsl:value-of select="my_times_watched"/><xsl:text>,</xsl:text>
+  <xsl:apply-templates select="anime"/>
+  <xsl:text>&#xd;</xsl:text>
+</xsl:template>
+<!-- etc -->
+</xsl:stylesheet>
