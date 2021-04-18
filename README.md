@@ -2,5 +2,6 @@
 requires xsltproc get it from http://xmlsoft.org/XSLT/xsltproc.html
 
 ## usage 
-xsltproc yanimelist-xml-to-csv.xls {your anime list}.xml >>any.txt && mv any.txt any.csv
-import to excel
+1)xsltproc myanimelist-xml-to-csv.xls {your anime list}.xml >>any.txt 
+2)mv any.txt any.csv
+3)import to excel
